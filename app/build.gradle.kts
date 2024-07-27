@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.inner.funexp.android.application")
+    id("com.inner.funexp.android.application.compose")
+    id("com.inner.funexp.android.hilt")
 }
 
 android {
