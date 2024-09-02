@@ -1,7 +1,12 @@
 package com.inner.funexp.navigation
 
-sealed class FunExpScreen(
-    val name: String,
-) {
-    data object Home : FunExpScreen(name = "Home")
+import kotlinx.serialization.Serializable
+
+sealed interface FunExpScreen {
+
+    @Serializable
+    data object Home : FunExpScreen
+
+    @Serializable
+    data object PdfViewer : FunExpScreen
 }

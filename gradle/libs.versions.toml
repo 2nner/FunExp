@@ -6,14 +6,16 @@ ksp = "1.9.24-1.0.20"
 material = "1.12.0"
 hilt = "2.51.1"
 socketIo = "2.1.0"
+kotlinxSerializationJson = "1.6.3"
 
 androidxActivity = "1.9.0"
 androidxAppcompat = "1.6.1"
 androidxCoreKtx = "1.13.1"
 androidxComposeBom = "2024.05.00"
 androidxComposeCompiler = "1.5.14" # Using inside build-logic
-androidxNavigation = "2.7.7"
+androidxNavigation = "2.8.0-rc01"
 androidxHilt = "1.2.0"
+androidxPdfViewer = "1.0.0-alpha01"
 
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -32,8 +34,10 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-viewbinding = { group = "androidx.compose.ui", name = "ui-viewbinding" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" } # Using inside build-logic
+androidx-pdfviewer-fragment = { group = "androidx.pdf", name = "pdf-viewer-fragment", version.ref = "androidxPdfViewer" }
 
 # AndroidX - Test
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -58,12 +62,14 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 # Included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 [bundles]
@@ -75,4 +81,5 @@ composeBundle = [
     "androidx-compose-ui",
     "androidx-compose-ui-tooling",
     "androidx-compose-ui-tooling-preview",
+    "androidx-compose-ui-viewbinding",
 ]
